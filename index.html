@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jquery-2.0.2.js"></script>
+        <script src="./jquery.stellar.min.js"></script>
+        <script>            
+                $(window).stellar();            
+        </script>
+    <script>
+        $(document).ready(function() {
+        $(window).on('scroll', function() {
+            var wScroll = $(this).scrollTop();
+            var fade = 35;
+            var introHeight = $('.intro-wrapper').height();
+            var fadePoint = (fade / 100) * introHeight - $('.title').height();
+            var suma = wScroll - 1100;
+            
+            
+            $('.welcome-msg').css({
+            'transform': 'translate(0px, ' + wScroll * 1.5 + 'px)'
+            });
+            
+            $('.welcome-msgw').css({
+            'transform': 'translate(0px, ' + suma * .1 + 'px)'
+            });
+            $('.welcome-msgwd').css({
+            'transform': 'translate(0px, ' + suma * .2 + 'px)'
+            });
+        });
+        });
+    </script>
+</body>
+</html>
